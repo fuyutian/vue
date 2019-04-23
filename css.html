@@ -1,0 +1,143 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+</head>
+<body>
+    <div id="box">面试问题</div>
+    <ul id="ul">
+            <li>aaaaaaaa</li>
+            <li>bbbbbbbb</li>
+            <li>cccccccc</li>
+          </ul>
+</body>
+<script>
+    window.onload = function(){
+        /* number string undefined boolean function object symbol
+        parseInt parseFloat Numbner
+        var arr = [] arr instanceof Array
+        push是尾部加入
+        unshift 是头部加入
+        pop 是尾部删除
+        aiax中post和get的区别
+        get会在url后的传递。post会直接以消息实体传递。
+        get只能提交1024自己，get请求的数据会被浏览器缓存起来。某种情况下，会带来严重的安全问题。
+        在服务端的区别
+        call和apply的区别?
+        call和apply都是改变函数的this指向，只不过cell可以接受多个参数，第一个参数是新的this对象，后面是一系列参数。
+        apply只能接受两个参数，一个是新this对象，另一是参数数组。
+        返回类型设置为datatype：‘json’
+        写一个获取非行间样式的函数?
+        事件委托是什么?
+        1，什么是事件委托：通俗的讲，事件就是onclick，onmouseover，onmouseout，等就是事件，委托呢，就是让别人来做，这个事件本来是加在某些元素上的，然而你却加到别人身上来做，完成这个事件。
+        也就是：利用冒泡的原理，把事件加到父级上，触发执行效果。
+        好处呢：1，提高性能。
+        http同源策略；协议，主机，端口号。
+
+        *
+        *
+        */
+        // function isArray(o){
+        //     return Object.prototype.toString.call(0) === '[object Array]';
+        // }
+        // var arr = [];
+        // var isbool = isArray(arr);
+        // console.log(arr instanceof Array);
+        // var box = document.getElementById('box');
+        // box.onclick = function(){
+        //     console.log(1213)
+        // },
+        // function add(a,b){
+        //     return a + b;
+        // }
+        // function sub(a,b){
+        //     return a * b
+        // }
+        // var a1 = add.apply(sub,[2,3]);
+        // var a2 = sub.call(add,2,3);
+        // console.log(a1);
+        // console.log(a2);
+        // function Animal(name){
+        //     this.name = name;
+        //     this.showName = function(){
+        //             alert(this.name);    
+        //         }    
+        //     }
+
+        // function Cat(name){
+        // Animal.apply(this,[name]);    
+        // }
+
+        // var cat = new Cat("咕咕");
+        // cat.showName();
+
+
+        // var oul = document.getElementById('ul');
+        // var oli = oul.getElementsByTagName('li');
+        // for(var i = 0;i<oli.length;i++){
+        //     oli[i].onmouseover = function(){
+        //         this.style.background = 'red';
+        //     }
+        //     oli[i].onmouseout = function(){
+        //         this.style.background = '';
+        //     }
+        // }
+        // 使用事件委托
+        // var oul = document.getElementById("ul");
+        // var ali = oul.getElementsByTagName("li");
+        // oul.onmouseover = function(ev){
+        //     var ev = ev || window.event;
+        //     var target = ev.target || ev.srcElement;
+        //     console.log(target);
+        //     if(target.nodeName.toLowerCase() == 'li'){
+        //         target.style.background = 'red'
+        //     }
+        // }
+        // 数组去重
+        // var arr = '1212312342323123132312132314354353243435';
+        // arr = arr.split('');
+        // var arr1 = [];
+        // var obj = {}
+        // for(let i = 0;i<arr.length;i++){
+        //     if(obj[arr[i]]){
+        //         obj[arr[i]] += 1
+        //     } else{
+        //         arr1.push(arr[i])
+        //         obj[arr[i]] = 1;
+        //     }
+        // }
+        // console.log(arr1);
+        //获取参数
+        // function getparse(){
+        //     var str = location.search;
+        //     str = str.substr(1);
+        //     var arr = str.split('&');
+        //     var parse = {}
+        //     for(let i = 0;i<arr.length;i++){
+        //         parse[arr[i].split('=')[0]] = arr[i].split('=')[1];
+        //     }
+        //     console.log(parse);
+        // }
+        // getparse()
+        // prosime的用法
+        let firstprosime = new Promise((resolve,reject)=>{
+            setTimeout(function(){
+                console.log('成功');
+                resolve('对不对胡');
+            },1000)
+        });
+        console.log(firstprosime)
+        // firstprosime.then(function(response){
+        //     console.log(response);
+        // });
+        // var str = 'Visit Runoob!';
+        // var n = str.replace(/Runoob/i,'mcaidh');
+        // console.log(n);
+
+        var str = '15136631108';
+        var patt = /^1[34578]\d{9}$/;
+        var result = patt.test(str);
+        console.log(result);
+}
+</script>
+</html>
